@@ -15,7 +15,7 @@ import { useReports } from "../api/ReportsContext";
 
 
 function Notes() {
-  const { reports, loading, error, updateReport, deleteReport, filteredReports } = useReports(); 
+  const { loading, error, updateReport, deleteReport, filteredReports } = useReports(); 
   const [editingContent, setEditingContent] = useState({}); 
 
   const handleEdit = (id, updatedData) => {
