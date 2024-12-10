@@ -137,7 +137,7 @@ function Create() {
             <SelectRoot
               collection={categories}
               size="sm"
-              width="320px"
+              width={["100%", "100%", "320px"]}
               position="relative"
             >
               <SelectLabel>Select Category</SelectLabel>
