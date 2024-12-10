@@ -5,10 +5,10 @@ import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 // import { createListCollection } from "@chakra-ui/react"
 import { useReports } from "../api/ReportsContext";
+import { FaNoteSticky } from "react-icons/fa6";
 
 function Header() {
   const { setSearchTerm } = useReports();
-
 
   return (
     <Box
@@ -18,17 +18,20 @@ function Header() {
       gap="20"
       alignItems="center"
       py="0"
-      px={['10px', '30px', '30px']}
+      px={["10px", "30px", "30px"]}
       borderBottom="1px solid #d4d4d8"
-      position='sticky'
-      zIndex='1'
+      position="sticky"
+      zIndex="1"
     >
-      <Link to='/'>
-        <Text textStyle="2xl" color="#71717a">
-          IndexNotes
-        </Text>
-      </Link>
-
+      <Box display='flex' alignItems='center' gap='5px'>
+        <Link to="/">
+          <Text textStyle="2xl" color="#71717a">
+            IndexNotes
+          </Text>
+        </Link>
+        <FaNoteSticky size='50px' color="#c692fb"/>
+      </Box>
+      {/*#71717a*/}
       <Box width="60%">
         <Box padding="10px">
           <Box
@@ -55,7 +58,7 @@ function Header() {
               }}
             >
               <Input
-                placeholder="Search"
+                placeholder="Search Title..."
                 fontSize="18px"
                 _focus={{
                   outline: "none",
