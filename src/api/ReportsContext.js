@@ -69,6 +69,7 @@ export const ReportsProvider = ({ children }) => {
       });
 
       const data = await response.json();
+      console.log(data)
 
       if (response.ok) {
         // Update the local reports state without the image field

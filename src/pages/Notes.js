@@ -39,7 +39,7 @@ function Notes() {
 
 
   return (
-    <Box style={style} display="flex" flexWrap="wrap" gap="10px">
+    <Box style={style} display="flex" flexWrap="wrap" gap="10px" px='10px'>
       { filteredReports && filteredReports.map((report) => (
         <Card.Root width={["100%", '50%', '24%']} mb="20px" padding="10px" key={report.id}>
           <Card.Body gap="2">

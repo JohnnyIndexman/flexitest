@@ -14,7 +14,7 @@ function Layout() {
         style={{
           display: "flex",
           alignItems: "start",
-        gap: '20px'
+        gap: '30px'
         }}
       >
         <SideNav />

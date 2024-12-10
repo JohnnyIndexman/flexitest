@@ -1,8 +1,9 @@
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 
 function Categories() {
   return (
-    <div>Categories</div>
+    <Box p='20px'>Categories</Box >
   )
 }
 

@@ -17,7 +17,8 @@ function Header() {
       display="flex"
       gap="20"
       alignItems="center"
-      padding="0 30px"
+      py="0"
+      px={['10px', '30px', '30px']}
       borderBottom="1px solid #d4d4d8"
       position='sticky'
       zIndex='1'

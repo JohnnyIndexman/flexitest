@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <Box>
+    <Box px={['10px', '30px', '30px']}>
       <footer
         style={{
           margin: "20px 30px",
