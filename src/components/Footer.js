@@ -4,8 +4,17 @@ import React from "react";
 function Footer() {
   return (
     <Box>
-      <footer style={{ postion: "absolute", bottom: "0", left: "0", width: '100%', zIndex: '1000' }}>
-        <Text>Open Source</Text>
+      <footer
+        style={{
+          margin: "20px 30px",
+          position: "fixed",
+          bottom: "0",
+          left: "0",
+          width: "100%",
+          zIndex: "1000",
+        }}
+      >
+        <Text>&copy; 2024. Built with &#10084;</Text>
       </footer>
     </Box>
   );

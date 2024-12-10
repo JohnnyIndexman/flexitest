@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../uicomponents/Header";
 import SideNav from "../uicomponents/SideNav";
 import { Outlet } from "react-router-dom";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 function Layout() {
     
@@ -20,7 +20,7 @@ function Layout() {
         <SideNav />
         <Outlet width='70%'/>
       </Box>
-      {/* <Footer/> */}
+      <Footer/>
     </Box>
   );
 }
