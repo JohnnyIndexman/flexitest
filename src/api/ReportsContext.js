@@ -51,8 +51,8 @@ export const ReportsProvider = ({ children }) => {
   const createReport = async (newReport) => {
     try {
       setLoading(true);
-      // Prepare report data without image field
       const reportData = {
+        id: newReport.id,
         title: newReport.title,
         report: newReport.report,
         category: newReport.category,
@@ -127,8 +127,8 @@ export const ReportsProvider = ({ children }) => {
         body: JSON.stringify({ record: updatedReports }),
       });
       const data = await response.json();
-      if (Array.isArray(data.record)) {
-        setReports(data.record);
+      if (Array.isArray(data.record.record)) {
+        setReports(data.record.record);
       } else {
         console.error("Unexpected response format:", data);
       }

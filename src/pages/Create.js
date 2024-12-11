@@ -210,6 +210,7 @@ function Create() {
   const { createReport } = useReports();
   const [preview, setPreview] = useState(null);
   const [newReport, setNewReport] = useState({
+    id: "",
     title: "",
     report: "",
     category: "",
@@ -264,7 +265,8 @@ function Create() {
       await createReport({
         ...newReport,
         image: imageUrl,
-        id: Date.now(),
+        id: crypto.randomUUID()
+
       });
 
       setNewReport({ title: "", report: "", category: "", image: "" });
