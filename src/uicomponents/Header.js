@@ -1,14 +1,19 @@
 import { Box, Text, Input } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { InputGroup } from "../components/ui/input-group";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
-// import { createListCollection } from "@chakra-ui/react"
+import { BsMenuButtonFill } from "react-icons/bs";
 import { useReports } from "../api/ReportsContext";
 import { FaNoteSticky } from "react-icons/fa6";
+import MobileMenu from "./MobileMenu";
 
 function Header() {
   const { setSearchTerm } = useReports();
+  const [ isOpen, setIsOpen ] = useState(false)
+  const toggleMenu = () => {
+    setIsOpen( prev => !prev)
+  }
 
   return (
     <Box
@@ -18,18 +23,29 @@ function Header() {
       gap="20"
       alignItems="center"
       py="0"
-      px={["10px", "30px", "30px"]}
+      px={["10px", "10px", "30px"]}
       borderBottom="1px solid #d4d4d8"
       position="sticky"
       zIndex="1"
     >
-      <Box display='flex' alignItems='center' gap='5px'>
-        <Link to="/">
-          <Text textStyle="2xl" color="#71717a">
-            IndexNotes
-          </Text>
-        </Link>
-        <FaNoteSticky size='50px' color="#c692fb"/>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        gap="20px"
+      >
+        <MobileMenu  onClose={() => setIsOpen(false)} isOpen={isOpen}/>
+        <Box className="burger">
+          <BsMenuButtonFill size="25px" onClick={toggleMenu} />
+        </Box>
+        <Box display="flex" alignItems="center" gap="5px">
+          <Link to="/">
+            <Text textStyle="2xl" color="#71717a">
+              IndexNotes
+            </Text>
+          </Link>
+          <FaNoteSticky size="50px" color="#c692fb" />
+        </Box>
       </Box>
       {/*#71717a*/}
       <Box width="60%">

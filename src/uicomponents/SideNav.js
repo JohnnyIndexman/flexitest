@@ -10,7 +10,8 @@ function SideNav() {
     <Box
       width="30%"
       marginTop="20px"
-      style={{ display: "flex", flexDirection: "column" }}
+      // style={{ display: "flex", flexDirection: "column" }}
+      className="side-nav"
     >
       
         <NavLink to="/" className="box-hover-active" >

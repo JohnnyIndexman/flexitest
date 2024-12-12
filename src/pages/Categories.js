@@ -1,10 +1,9 @@
-import { Box, Text } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Text } from "@chakra-ui/react";
+import React from "react";
 import { useReports } from "../api/ReportsContext";
 
 function Categories() {
-  const { filteredReports } =
-    useReports();
+  const { filteredReports } = useReports();
 
   const getCategoryCounts = (filteredReports) => {
     const counts = {};
@@ -13,21 +12,24 @@ function Categories() {
     });
     return counts;
   };
-  
+
   const categoryCounts = getCategoryCounts(filteredReports);
 
   const categoryColors = {
-    todo: "#4caf50",       
-    Reminders: "#2196f3",     
-    Projects: "#ff9800",      
-    Ideas: "#9c27b0",         
+    todo: "#4caf50",
+    Reminders: "#2196f3",
+    Projects: "#ff9800",
+    Ideas: "#9c27b0",
   };
-  
-  
-
 
   return (
-    <Box display='flex' flexDirection='column' justifyContent='center'>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      px={["10px", "30px", "30px"]}
+      mt="30px"
+    >
       <Text fontSize="2xl" mb={4}>
         Categories
       </Text>
@@ -51,7 +53,7 @@ function Categories() {
         </Box>
       ))}
     </Box>
-  )
+  );
 }
 
-export default Categories
+export default Categories;

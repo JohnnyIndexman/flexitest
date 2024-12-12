@@ -10,8 +10,6 @@ import {
   PopoverRoot,
   PopoverTitle,
   PopoverTrigger,
-  HStack,
-  Stack,
 } from "@chakra-ui/react";
 import { Skeleton } from "@chakra-ui/react";
 import { useReports } from "../api/ReportsContext";
@@ -50,12 +48,12 @@ function Notes() {
   };
 
   return (
-    <Box style={style} display="flex" flexWrap="wrap" gap="10px" px="10px">
+    <Box style={style} display="flex" flexWrap="wrap" gap="20px" px="10px">
       {filteredReports &&
         filteredReports.map((report) => (
           <Card.Root
-            width={["100%", "50%", "24%"]}
-            mb="20px"
+            width={["100%", "48%", "24%"]}
+            mb="10px"
             padding="10px"
             key={report.id}
             boxShadow="0 0px 5px 2px #d4d4d8"

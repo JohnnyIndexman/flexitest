@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValueText,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
   const { createReport } = useReports();
@@ -24,6 +25,7 @@ function Create() {
     image: ""
   });
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate()
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
@@ -58,7 +60,7 @@ function Create() {
       // Upload image to Cloudinary
       const formData = new FormData();
       formData.append("file", newReport.image);
-      formData.append("upload_preset", "IndexNotes"); // Set in Cloudinary
+      formData.append("upload_preset", "IndexNotes"); 
       formData.append("cloud_name", "dhqrrjsbb");
 
       const response = await axios.post(
@@ -78,6 +80,8 @@ function Create() {
 
       setNewReport({ title: "", report: "", category: "", image: "" });
       setPreview(null);
+      navigate('/')
+      
       console.log("Report created successfully!");
     } catch (error) {
       console.error("Failed to create report:", error);
@@ -90,7 +94,7 @@ function Create() {
     boxSizing: "border-box",
     border: "1px solid none",
     padding: "30px 10px 30px 10px",
-    width: "100%",
+    width: "100%"
   };
 
   return (

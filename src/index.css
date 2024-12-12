@@ -58,3 +58,33 @@ input {
   outline: none;
   border: 1px solid #c692fb;
 }
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.close {
+  align-self: flex-end;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.side-nav{
+  display: flex;
+  flex-direction: column;
+}
+
+@media ( max-width: 760px) {
+  .burger {
+    display: block;
+  }
+
+  .side-nav {
+    display: none;
+  }
+
+  form {
+    width: 100%;
+  }
+}
