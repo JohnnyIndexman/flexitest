@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
+
 const ReportsContext = createContext();
 
 export const ReportsProvider = ({ children }) => {
@@ -7,6 +8,8 @@ export const ReportsProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [theme, setTheme] = useState('light');
+  
 
   const API_URL = "https://api.jsonbin.io/v3/b/67565865ad19ca34f8d7e85d";
   const API_KEY =
@@ -82,6 +85,7 @@ export const ReportsProvider = ({ children }) => {
       setError(err.message);
     } finally {
       setLoading(false);
+      
     }
   };
 
@@ -146,6 +150,11 @@ export const ReportsProvider = ({ children }) => {
     report.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // function for dark and light mode
+  function themeSetting() {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"))
+  }
+
   return (
     <ReportsContext.Provider
       value={{
@@ -158,6 +167,8 @@ export const ReportsProvider = ({ children }) => {
         filteredReports,
         searchTerm,
         setSearchTerm,
+        themeSetting,
+        theme
       }}
     >
       {children}

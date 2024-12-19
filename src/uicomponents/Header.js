@@ -7,13 +7,15 @@ import { BsMenuButtonFill } from "react-icons/bs";
 import { useReports } from "../api/ReportsContext";
 import { FaNoteSticky } from "react-icons/fa6";
 import MobileMenu from "./MobileMenu";
+import { MdModeNight } from "react-icons/md";
 
 function Header() {
-  const { setSearchTerm } = useReports();
+  const { setSearchTerm, themeSetting } = useReports();
   const [ isOpen, setIsOpen ] = useState(false)
   const toggleMenu = () => {
     setIsOpen( prev => !prev)
   }
+
 
   return (
     <Box
@@ -48,7 +50,7 @@ function Header() {
         </Box>
       </Box>
       {/*#71717a*/}
-      <Box width="60%">
+      <Box width='60%'>
         <Box padding="10px">
           <Box
             style={{
@@ -57,7 +59,7 @@ function Header() {
               border: "1px solid #e4e4e7",
               alignItems: "center",
               padding: "5px 12px",
-              borderRadius: "10px",
+              borderRadius: "10px"
             }}
             _focusWithin={{
               boxShadow: "0 0px 5px 2px #d4d4d8",
@@ -87,6 +89,7 @@ function Header() {
           </Box>
         </Box>
       </Box>
+      <MdModeNight size='30px' style={{ cursor: "pointer"}} onClick={themeSetting}/>
     </Box>
   );
 }

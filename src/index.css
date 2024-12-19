@@ -75,6 +75,16 @@ input {
   flex-direction: column;
 }
 
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
 @media ( max-width: 760px) {
   .burger {
     display: block;
